@@ -11,9 +11,9 @@
 | Route Name | Endpoint | Method | Description |
 | -----------| ---------| -------| ------------|
 | Index | /welcome | GET | Renders a welcome page |
-| Login | /mof/login | GET | Shows a login form for the user access their friend |
-| Signup | /mof/signup | POST | Creates a user |
-| Logout | /mof/logout | GET | Logs the user out |
+| Login | /user/login | GET | Shows a login form for the user access their friend |
+| Signup | /user/signup | POST | Creates a user |
+| Logout | /user/logout | GET | Logs the user out |
 | History | /mof/logs | GET | Shows the all the inputs the user has made |
 
 
@@ -31,9 +31,13 @@
 
 
 ## Technologies Used
-- Express
-- Mongodb
-- Mongoose
-- Morgan
+- Bcryptjs
+- Body-parser
 - Cors
 - Dotenv
+- Express
+- Express-session
+- jsonwebtoken
+- method-override
+- Mongoose
+- Morgan
