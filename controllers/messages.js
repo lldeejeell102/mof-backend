@@ -12,8 +12,8 @@ router.use(verifyJWT)
 // ROUTES
 router.get('/protected', verifyJWT, async (req, res, Message) => {
     try {
-        const userId = req.user.id;
-        const messages = await Message.find({ userId });
+        const userusername = req.user.username;
+        const messages = await Message.find({ username });
 
         res.json({ message: "Welcome, " + req.user.name, messages });
     } catch (error) {
@@ -26,20 +26,34 @@ router.get('/protected', verifyJWT, async (req, res, Message) => {
 // Show - Get
 router.get('/', verifyJWT, async (req, res) => {
     try {
-        const username = req.query.username;
+        const username = req.body.username;
         console.log(username)
         const message = await Message.find({username: username});
 
-        if (!todo) {
+        if (!message) {
             return res.status(404).send('Message not found');
         }
 
-        res.json({ todo });
+        res.json({ message });
     } catch (error) {
-        console.log("---", error.message, "----");
+        console.log("----", error.message, "----");
         res.status(400).send('error, read logs for details');
     }
 });
 
+
+// Create - Post
+router.post('/', async (req, res) => {
+    try {
+        const username = req.body.username;
+        req.body.userId = username;
+
+        const createdMessage = await Message.create(req.body);
+        res.json({ message: 'Message created successfully', message: createdMessage });
+    } catch (error) {
+        console.log("----", error.message, "----");
+        res.status(400).send('error, read logs for details');
+    }
+});
 
 module.exports = router
