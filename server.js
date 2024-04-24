@@ -3,7 +3,7 @@ require('dotenv').config()
 const bodyParser = require('body-parser')
 const userRouter = require('./controllers/user')
 const Message = require('./models/Message')
-const messageRouter = require('./controllers/messages')
+const messageRouter = require('./controllers/messages.js')
 const cors = require('cors')
 
 

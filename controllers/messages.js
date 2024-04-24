@@ -49,7 +49,23 @@ router.post('/', async (req, res) => {
         req.body.userId = username;
 
         const createdMessage = await Message.create(req.body);
-        res.json({ message: 'Message created successfully', message: createdMessage });
+
+        const openai = new OpenAI({
+            apiKey: process.env.OPEN_API_KEY
+        })
+
+        async function getFriendResponse(message){
+            const completion = await openai.chat.completions.create({
+                messages: [{ role: "system", content: message}],
+                model: "gpt-3.5-turbo"
+            })
+            return completion.choices[0].message.content
+        }
+
+        const friendResponse = await getFriendResponse(createdMessage.message)
+        res.json({ message:'Message from friend', message: createdMessage, friendResponse})
+
+        // res.json({ message: 'Message created successfully', message: createdMessage });
     } catch (error) {
         console.log("----", error.message, "----");
         res.status(400).send('error, read logs for details');
