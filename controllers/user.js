@@ -2,9 +2,9 @@
 // DEPENDENCIES
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 const express = require("express")
-const User = require("../models/User")
+const User = require("../models/User.js")
 const bcrypt = require("bcryptjs")
-const verifyJWT = require("../utils/middleware")
+const verifyJWT = require("../utils/middleware.js")
 const jwt = require('jsonwebtoken')
 
 

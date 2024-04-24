@@ -1,13 +1,22 @@
 const express = require('express')
+// import express from 'express'
 require('dotenv').config()
+// import dotenv from 'dotenv'
+// dotenv.config()
 const bodyParser = require('body-parser')
+// import bodyParser from 'body-parser'
 const userRouter = require('./controllers/user')
+// import userRouter from './controllers/user.js'
 const Message = require('./models/Message')
-const messageRouter = require('./controllers/messages.js')
+// import Message from './models/Message.js'
+const messageRouter = require('./controllers/messages')
+// import messageRouter from './controllers/messages.js'
 const cors = require('cors')
+// import cors from 'cors'
 
 
 const mongoose = require('./models/connection')
+// import mongoose from './models/connection.js'
 
 
 

@@ -1,6 +1,11 @@
 const express = require('express')
+// import express from 'express'
 const Message = require('../models/Message')
+// import Message from '../models/Message.mjs'
 const verifyJWT = require('../utils/middleware')
+// import verifyJWT from '../utils/middleware.mjs'
+const OpenAI = require('openai')
+require('dotenv').config()
 
 const router = express.Router()
 
