@@ -3,8 +3,10 @@
 - **Name:** Daniel Ji
 - **App Name:** MOF
 - **Description:** This app allows you to login and chat with an AI bot
-- **Github URL:** 
+- **Github URL:**
+https://github.com/lldeejeell102/mof-backend
 - **Deployed Website:** 
+https://mof-backend.onrender.com/
 
 
 ## Route Map
