@@ -17,6 +17,7 @@ https://mof-backend.onrender.com/
 | Signup | /user/signup | POST | Creates a user |
 | Logout | /user/logout | GET | Logs the user out |
 | History | /mof/logs | GET | Shows the all the inputs the user has made |
+| History | /mof/logs | PUT | Updates a message submitted by user |
 
 
 ## Design Mockup (Desktop & Mobile)
